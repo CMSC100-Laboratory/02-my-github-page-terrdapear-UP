@@ -1,15 +1,204 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <title>Sample Web Page</title>
-  </head>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <body>
-    <h1>This is a heading</h1>
-    <p>This is the first paragraph of text</p>
-    <hr />
-    <p>This is the second paragraph of text</p>
-  </body>
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: antiquewhite;
+}
 
+.header {
+  grid-area: header;
+  background-color: #5d2424;
+  padding: 30px;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header'
+    'left left left right right right'
+    'FL FL FL FR FR FR';
+row-gap: 10px;
+column-gap: 10px;
+}
+
+.project-title {
+    font-size:2.2rem;
+    font-weight:600;
+    color: whitesmoke;
+}
+
+.vid {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+
+.wp {
+    color: whitesmoke;
+    text-align: left;
+    font-size: 2rem;
+
+    padding: 20px;          /* space inside the paragraph */
+    margin-top: 12px;       /* space from video/title */
+
+    line-height: 1.7;       /* space between rows (very important) */
+    letter-spacing: 0.01em; /* subtle breathing room */
+
+    max-width: 65ch;        /* keeps line length readable */
+}
+
+.left,
+.middle,
+.right, .FL, .FR {
+  padding: 10px;
+}
+
+.left {
+  grid-area: left;
+  border-radius: 20px;
+  text-align:center;
+}
+
+.middle {
+  grid-area: middle;
+  border-radius: 20px;
+  
+}
+
+.right {
+  grid-area: right;
+  border-radius: 20px;
+  text-align:center;
+}
+
+.FL {
+    grid-area: FL;
+    background-color: #614242;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.paras {
+    column-count: 2;        /* number of columns */
+    column-gap: 10px;       /* space between columns */
+    text-align: left;       /* make text readable in columns */
+}
+
+.FR {
+  grid-area: FR;
+  background-color: #8e4040;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+table, th, td{
+border: 0px solid;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+#pfp {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+
+    margin-right: 40px; /* 👈 creates space from text */
+}
+
+#skillsp{
+    margin-top: 0px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  /* try to fill the grid row */
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="grid-container">
+  <div class="header">
+    <div class="table">
+        <table style="width: auto;">
+            <tr>
+                <th rowspan ="2">
+                    <img id="pfp" src="media/terrencee.jpg">
+                </th>
+                <th colspan="2"><h2 style="color: beige;">Terrence de Real</h2></th>
+            </tr>
+            <tr>
+                <td><text style="color: beige;font-size: 20px;"><marquee direction="left" scrollamount="5">Hi, this is my cool portfolio. Check out the projects I've made :></marquee></text></td>
+            </tr>
+        </table>
+    </div>
+
+  </div>
+
+  <div class="left" style="background-color:#cf6666;">
+    <p class="project-title">Academic Scheduling and Information Management</p>
+    <video class="vid" id="cmsc22" autoplay loop muted playsinline>
+        <source src="media/cmsc22.mp4" type="video/mp4">
+    </video>
+    <p class="wp"><b>Academic Scheduling and Information Management</b> provides students with an intuitive interface to plan, edit, and manage their academic schedules. It supports calendar conflict detection, allows editing of TBA sections, and offers a seamless workflow.
+
+Designed for efficiency and flexibility, it gives students a powerful tool to organize their semester effectively.</p>
+  </div>
+  <div class="right" style="background-color:#5d5858;">
+    <p class="project-title">Greenvale Pollution Reduction Planner</p>
+    <video class="vid" id="cmsc150" autoplay loop muted playsinline>
+        <source src="media/cmsc150.mp4" type="video/mp4">
+    </video>
+    <p class="wp">The <b>Greenvale Pollution Reduction Planner</b> is a desktop tool that uses the simplex algorithm 
+from linear programming to help determine the most cost-efficient combination of mitigation 
+projects to meet Greenvale’s pollution-reduction targets. It provides an easy interface for 
+selecting projects and shows the Simplex Method steps, tableaus, and final optimized results.</p>
+  </div>
+
+    <div class="FL">
+    
+    <p class="project-title">Skills</p>
+    <div class="paras">
+    <p class="wp">
+        I am a detail-oriented and creative problem solver with good technical and organizational skills. I excel in algorithmic design, able to break down difficult problems into efficient, clean solutions. I am experienced in selecting and organizing data structures for optimal performance.
+    </p>
+
+    <p class="wp">
+        My work ethic is structured and reliable, allowing me to plan and execute projects effectively. Additionally, I take pride in producing clean, readable, and maintainable code.
+    </p>
+    </div>
+
+
+
+    </div>
+
+
+  <div class="FR">
+    <p class="project-title">About me</p>
+  </div>
+
+</div>
+
+</body>
 </html>
